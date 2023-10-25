@@ -11,6 +11,9 @@ def circular_array_path(n, m):
     return result
 
 if __name__ == '__main__':
+    if len(sys.argv) != 3:
+        print("Использование: python3 task1.py m n")
+        sys.exit(1)
     n = int(sys.argv[1])
     m = int(sys.argv[2])
   

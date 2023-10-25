@@ -17,7 +17,8 @@ def min_moves_to_equalize(numbers: list):
     return moves
 
 if len(sys.argv) != 2:
-    print("Пожалуйста, укажите имя файла в качестве аргумента командной строки.")
+    print("Использование: python3 task4.py numbers.txt")
+    sys.exit(1)
 else:
     filename = sys.argv[1]
     numbers = read_numbers(filename)

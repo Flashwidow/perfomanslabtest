@@ -1,4 +1,5 @@
 import json
+import sys
 
 def fill_values(tests, values):
     def update_values(test, values):
@@ -21,8 +22,13 @@ def fill_values(tests, values):
         update_values(test, values)
 
 if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Использование: python3 task3.py tests.json values.json")
+        sys.exit(1)
+    tests_file_name = sys.argv[1]
+    values_file_name = sys.argv[2]
     # Открываем и читаем JSON-файлы
-    with open("tests.json", "r") as tests_file, open("values.json", "r") as values_file:
+    with open(tests_file_name, "r") as tests_file, open(values_file_name, "r") as values_file:
         tests_data = json.load(tests_file)
         values_data = json.load(values_file)
 
